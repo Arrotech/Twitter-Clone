@@ -20,7 +20,7 @@
     padding: 15px 20px;
 }
 
-..feed__header>h2 {
+.feed__header>h2 {
     font-size: 20px;
     font-weight: 800;
 }
