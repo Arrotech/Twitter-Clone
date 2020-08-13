@@ -8,27 +8,29 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishIcon from '@material-ui/icons/Publish';
 
 function Post({ displayName, username, verified, text, image, avatar }) {
+	// "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png"
+	// "https://media.giphy.com/media/MSCmj0qsPPTDq/giphy.gif"
 	return (
 		<div className="post">
 			<div className="post__avatar">
-				<Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
+				<Avatar src={avatar} />
 			</div>
 			<div className="post__body">
 				<div className="post__header">
 					<div className="post__headerText">
 						<h3>
-							Harun Gachanja
+							{displayName}
 							<span className="post__headerSpecial">
-								<VerifiedUserIcon className="post__badge" />
-								@ArrotechDesign
+								{verified && <VerifiedUserIcon className="post__badge" />}
+								@{username}
 							</span>
 						</h3>
 					</div>
 					<div className="post__headerDescription">
-						<p>I challenge myself to build twitter clone app.</p>
+						<p>{text}</p>
 					</div>
 				</div>
-				<img src="https://media.giphy.com/media/MSCmj0qsPPTDq/giphy.gif" alt="GIF" />
+				<img src={image} alt="GIF" />
 				<div className="post__footer">
 					<ChatBubbleOutlineIcon fontSize="small" />
 					<RepeatIcon fontSize="small" />
